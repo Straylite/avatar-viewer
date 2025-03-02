@@ -11,7 +11,7 @@
         }
         body {
             font-family: 'Zepto', sans-serif;
-            font-size: 6px;
+            font-size: 18px;
             display: flex;
         }
         .grid-container {
@@ -21,60 +21,58 @@
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(10, 32px);
-            gap: 5px;
+            grid-template-columns: repeat(10, 96px);
+            gap: 15px;
         }
         .item {
             text-align: center;
         }
         .item div {
-    font-size: 6px !important;
-    text-align: center;
-    line-height: 1;
-}
-
-
+            font-size: 18px !important;
+            text-align: center;
+            line-height: 1;
+        }
         img {
-            width: 32px;
-            height: 32px;
+            width: 96px;
+            height: 96px;
         }
         .text-output {
-            margin-left: 20px;
-            font-size: 11px;
+            margin-left: 60px;
+            font-size: 33px;
             white-space: pre-line;
-            padding: 5px;
-            border: 1px solid #000;
-            width: 200px;
+            padding: 15px;
+            border: 3px solid #000;
+            width: 600px;
             position: fixed;
-            right: 20px;
-            top: 10px;
+            right: 60px;
+            top: 30px;
             background: white;
             height: auto;
         }
         .tabs {
             display: flex;
-            margin-bottom: 2px;
+            margin-bottom: 6px;
         }
         .tab {
-            padding: 3px 8px;
+            padding: 9px 24px;
             cursor: pointer;
-            border: 1px solid black;
-            margin-right: 3px;
+            border: 3px solid black;
+            margin-right: 9px;
         }
         .active-tab {
             background: black;
             color: white;
         }
         .color-controls {
-            margin-top: 2px;
+            margin-top: 6px;
         }
         .color-box {
-            width: 185px;
-            height: 50px;
-            margin: 2px auto;
-            border: 2px solid black;
+            width: 555px;
+            height: 150px;
+            margin: 6px auto;
+            border: 6px solid black;
             position: relative;
-            padding: 2px;
+            padding: 6px;
             background: white;
             box-sizing: border-box;
         }
@@ -85,33 +83,34 @@
             position: absolute;
             top: 0;
             left: 0;
-            border: 2px solid white;
+            border: 6px solid white;
         }
         #selectedImage {
             position: absolute;
-            top: 2px;
-            left: 2px;
-            width: 32px;
-            height: 32px;
-            border: 2px solid white;
+            top: 6px;
+            left: 6px;
+            width: 96px;
+            height: 96px;
+            border: 6px solid white;
         }
         #username {
             position: absolute;
-            top: 5px;
-            left: 40px;
+            top: 15px;
+            left: 120px;
             font-family: 'Zepto', sans-serif;
-            font-size: 12px;
+            font-size: 36px;
         }
         .hex-container {
             display: flex;
             justify-content: space-between;
-            margin-top: 2px;
+            margin-top: 6px;
         }
         .hex-box {
-            padding: 3px;
-            border: 1px solid black;
+            padding: 9px;
+            border: 3px solid black;
             text-align: center;
-            width: 90px;
+            width: 270px;
+            font-size: 24px;
         }
     </style>
 </head>
