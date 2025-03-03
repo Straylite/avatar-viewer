@@ -95,11 +95,23 @@
         }
         #username {
             position: absolute;
-            top: 15px;
+            top: -2px;
             left: 120px;
             font-family: 'Zepto', sans-serif;
             font-size: 36px;
+            z-index: 2; /* Ensure text stays above */
         }
+
+        #username-bg {
+            position: absolute;
+            top: 6px; /* Slightly adjust to align with text */
+            left: 115px;
+            width: 250px; /* Adjust width to fit username */
+            height: 34px; /* Adjust height to match text */
+            background: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+            z-index: 1; /* Place it behind the text */
+        }
+
         .hex-container {
             display: flex;
             justify-content: space-between;
@@ -131,8 +143,10 @@
             <div class="color-box">
                 <div class="color-inner" id="colorBox">
                     <img id="selectedImage" src="" style="display: none;">
+                    <div id="username-bg"></div>
                     <span id="username">Username</span>
                 </div>
+                
             </div>
             <div class="hex-container">
                 <div class="hex-box" id="bgHexColor">#FF0000</div>
