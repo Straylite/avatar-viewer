@@ -7,7 +7,7 @@
     <style>
         @font-face {
             font-family: 'Zepto';
-            src: url('zepto.ttf'); /* Ensure this font file is available */
+            src: url('zepto.ttf');
         }
         body {
             font-family: 'Zepto', sans-serif;
@@ -99,17 +99,17 @@
             left: 120px;
             font-family: 'Zepto', sans-serif;
             font-size: 36px;
-            z-index: 2; /* Ensure text stays above */
+            z-index: 2; 
         }
 
         #username-bg {
             position: absolute;
-            top: 6px; /* Slightly adjust to align with text */
+            top: 6px; 
             left: 115px;
-            width: 250px; /* Adjust width to fit username */
-            height: 34px; /* Adjust height to match text */
-            background: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
-            z-index: 1; /* Place it behind the text */
+            width: 250px; 
+            height: 34px; 
+            background: rgba(0, 0, 0, 0.5); 
+            z-index: 1; 
         }
 
         .hex-container {
@@ -157,19 +157,16 @@
 
     <script>
         let activeMode = "background";
-        let bgColorHex = "#FF0000"; // Default background color
-        let nameColorHex = "#000000"; // Default name color
-        let selectedName = ""; // Track selected avatar name
+        let bgColorHex = "#FF0000"; 
+        let nameColorHex = "#000000"; 
+        let selectedName = ""; 
         let bgHSL = { h: 0, s: 100, l: 50 };
         let nameHSL = { h: 0, s: 100, l: 50 };
 
-    
         document.getElementById("bgColorTab").addEventListener("click", function() {
         activeMode = "background";
         this.classList.add("active-tab");
         document.getElementById("nameColorTab").classList.remove("active-tab");
-
-        // Update sliders to background color values
         document.getElementById("hue").value = bgHSL.h;
         document.getElementById("saturation").value = bgHSL.s;
         document.getElementById("brightness").value = bgHSL.l;
@@ -179,14 +176,11 @@
         activeMode = "name";
         this.classList.add("active-tab");
         document.getElementById("bgColorTab").classList.remove("active-tab");
-
-        // Update sliders to name color values
         document.getElementById("hue").value = nameHSL.h;
         document.getElementById("saturation").value = nameHSL.s;
         document.getElementById("brightness").value = nameHSL.l;
     });
 
-    
         function hslToHex(h, s, l) {
             s /= 100;
             l /= 100;
@@ -219,20 +213,18 @@
             let hex = hslToHex(h, s, l);
 
             if (activeMode === "background") {
-                bgHSL = { h, s, l }; // Store background values
+                bgHSL = { h, s, l }; 
                 bgColorHex = hex;
                 document.getElementById("colorBox").style.backgroundColor = color;
                 document.getElementById("bgHexColor").textContent = hex;
             } else {
-                nameHSL = { h, s, l }; // Store name color values
+                nameHSL = { h, s, l }; 
                 nameColorHex = hex;
                 document.getElementById("username").style.color = color;
                 document.getElementById("nameHexColor").textContent = hex;
             }
-        
             updateTextOutput(selectedName);
         }
-
     
         document.getElementById("hue").addEventListener("input", updateColor);
         document.getElementById("saturation").addEventListener("input", updateColor);
@@ -240,25 +232,23 @@
     
         async function loadImages() {
             try {
-                const response = await fetch('images.txt'); // Load the text file
+                const response = await fetch('images.txt'); 
                 const text = await response.text();
                 const imageNames = text.split('\n').map(name => name.trim()).filter(name => name);
     
                 const grid = document.getElementById("imageGrid");
-                grid.innerHTML = ""; // Clear previous content
+                grid.innerHTML = ""; 
     
                 imageNames.forEach(name => {
                     const item = document.createElement("div");
                     item.classList.add("item");
     
-                    // Image element (initially empty for lazy loading)
                     const img = document.createElement("img");
-                    img.setAttribute("data-src", `images/${name}.png`); // Store image path
+                    img.setAttribute("data-src", `images/${name}.png`); 
                     img.alt = name;
                     img.width = 32;
                     img.height = 32;
     
-                    // Keep text label always visible
                     const nameLabel = document.createElement("div");
                     nameLabel.textContent = name;
                     nameLabel.style.fontSize = "10px";
@@ -276,7 +266,7 @@
                     grid.appendChild(item);
                 });
     
-                observeImages(); // Start lazy loading
+                observeImages(); 
             } catch (error) {
                 console.error("Error loading images:", error);
             }
@@ -287,12 +277,10 @@
                 entries.forEach(entry => {
                     const img = entry.target;
                     if (entry.isIntersecting) {
-                        // Load the image when in view
                         img.src = img.getAttribute("data-src");
                     } else {
-                        // Unload image but keep text label visible
                         img.src = "";
-                        img.setAttribute("data-src", `images/${img.alt}.png`); // Store the path for reload
+                        img.setAttribute("data-src", `images/${img.alt}.png`); 
                     }
                 });
             }, { rootMargin: "100px" });
