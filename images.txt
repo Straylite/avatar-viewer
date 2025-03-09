@@ -1980,7 +1980,6 @@ rabsca-shiny
 flittle-shiny
 espathra-shiny
 tinkatink-shiny
-tinkatuff-shiny
 tinkaton-shiny
 wiglett-shiny
 wugtrio-shiny
