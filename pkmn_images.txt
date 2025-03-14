@@ -2047,4 +2047,3 @@ ironboulder-shiny
 ironcrown-shiny
 terapagos-shiny
 pecharunt-shiny
-isaac
