@@ -20,10 +20,10 @@
              max-height: 100vh;
          }
          .grid {
-             display: grid;
-             grid-template-columns: repeat(10, 96px);
-             gap: 15px;
-         }
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); /* Allows wrapping */
+            gap: 15px;
+        }
          .item {
              text-align: center;
          }
@@ -37,18 +37,16 @@
              height: 96px;
          }
          .text-output {
-             margin-left: 60px;
-             font-size: 25px;
-             white-space: pre-line;
-             padding: 15px;
-             border: 3px solid #000;
-             width: 600px;
-             position: fixed;
-             right: 60px;
-             top: 30px;
-             background: white;
-             height: auto;
-         }
+            margin-left: auto; /* Pushes it to the right */
+            font-size: 25px;
+            white-space: pre-line;
+            padding: 15px;
+            border: 3px solid #000;
+            width: min(600px, 40vw); /* Adjusts width dynamically */
+            background: white;
+            height: auto;
+            position: relative; /* Prevents overlap issues */
+        }
          .tabs {
              display: flex;
              margin-bottom: 6px;
